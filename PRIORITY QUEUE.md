@@ -30,8 +30,40 @@ To write a Python program for simple implementation of Priority Queue using Queu
 ### PROGRAM
 
 ```
+class PQ(object):
+    def __init__(self):
+        self.queue=[]
+    def __str__(self):
+        return ' '.join([str(i) for i in self.queue])
+    def isEmpty(self):
+        return len(self.queue)==0
+    def insert(self,data):
+        self.queue.append(data)
+    def delete(self):
+        try:
+            max_val=0
+            for i in range (len(self.queue)):
+                if self.queue[i]>self.queue[max_val]:
+                    max_val=i
+            item=self.queue[max_val]
+            del self.queue[max_val]
+            return item
+        except IndexError:
+            print()
+            exit()
+myQ=PQ()
+n=int(input())
+for i in range(0,n):
+    ele=int(input())
+    myQ.insert(ele)
+print(myQ)
+while not myQ.isEmpty():
+    print(myQ.delete())
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/4c0d4abe-1d54-4891-a868-13470b6ea71f)
+
 
 ### RESULT
+Thus the program is done and verified.
