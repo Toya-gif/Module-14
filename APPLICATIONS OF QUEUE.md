@@ -1,37 +1,33 @@
 # Exp.No:40  
 ## APPLICATIONS OF QUEUE
 
----
 
 ### AIM  
 To write a Python program to implement CPU Process Scheduling using a queue.
 
----
 
 ### ALGORITHM  
 
 1. Start the program.  
-2. Define the function `CalculateWaitingTime(at, bt, N)`.  
-3. Initialize a list `wt` of size `N` with all values set to 0.  
-4. Set `wt[0] = 0` for the first process.  
+2. Define the function CalculateWaitingTime(at, bt, N).  
+3. Initialize a list wt of size N with all values set to 0.  
+4. Set wt[0] = 0 for the first process.  
 5. Print the table header: "P.No.", "Arrival Time", "Burst Time", "Waiting Time".  
 6. Print the values for the first process.  
-7. For each process from index `1` to `N-1`:  
-   - Calculate `wt[i] = (at[i - 1] + bt[i - 1] + wt[i - 1]) - at[i]`.  
+7. For each process from index 1 to N-1:  
+   - Calculate wt[i] = (at[i - 1] + bt[i - 1] + wt[i - 1]) - at[i].  
    - Print the process number, arrival time, burst time, and waiting time.  
-8. Initialize `total_waiting_time = 0`.  
+8. Initialize total_waiting_time = 0.  
 9. Add up all waiting times.  
-10. Calculate average waiting time as `average = total_waiting_time / N`.  
+10. Calculate average waiting time as average = total_waiting_time / N.  
 11. Print the average waiting time.  
 12. Get burst times as input from the user for 5 processes.  
-13. Call `CalculateWaitingTime()` with `at`, `bt`, and `N`.  
+13. Call CalculateWaitingTime() with at, bt, and N.  
 14. End the program.
 
----
 
 ### PROGRAM  
 
-```
 def findWaitingTime(processes, n,
 					bt, wt):
 
@@ -43,8 +39,6 @@ def findWaitingTime(processes, n,
 	for i in range(1, n ):
 		wt[i] = bt[i - 1] + wt[i - 1]
 
-# Function to calculate turn
-# around time
 def findTurnAroundTime(processes, n,
 					bt, wt, tat):
 
@@ -53,8 +47,6 @@ def findTurnAroundTime(processes, n,
 	for i in range(n):
 		tat[i] = bt[i] + wt[i]
 
-# Function to calculate
-# average time
 def findavgTime( processes, n, bt):
 
 	wt = [0] * n
@@ -93,8 +85,7 @@ def findavgTime( processes, n, bt):
 	print("Average turn around time = "+
 					str(total_tat / n))
 
-# Driver code
-if __name__ =="__main__":
+if _name_ =="_main_":
 	
 	# process id's
 	processes = [ 1, 2, 3]
@@ -108,13 +99,14 @@ if __name__ =="__main__":
 
 	findavgTime(processes, n, burst_time)
 
-```
+
+
 
 ### OUTPUT
-![image](https://github.com/user-attachments/assets/1c9f2d9b-0652-485d-ac91-42935787e754)
+![image](https://github.com/user-attachments/assets/59523d16-8062-4955-a440-6a05fa61090b)
 
+### RESULT
+Thus, a Python program to implement CPU Process Scheduling using a queue was implemented successfully.
 
 
 ### RESULT
-Thus the program is done and verified.
-
